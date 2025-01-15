@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #171717;
 }
 a {
   color: #00B7FF;
@@ -39,5 +40,70 @@ a {
 .bi-globe{
   font-size: 1.2rem;
 }
+.search-bar{
+  margin-top: 100px;
+  border-radius: 30px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10%;
+  position: relative;
+}
+.rating{
+  margin-left: 10%;
+  font-size: 1.5rem;
+  color: yellow;
+}
+.rating-number{
+  color: white;
+  margin-left: 10%;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+.title{
+  margin-left: 10%;
+  margin-top: 50px;
+  color: white;
+}
+.detail-grid{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto;
+  gap: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 40px;
+  height: 300px;
+}
+.detail-game{
+  grid-column: 1/2;
+  grid-row: 1/4;
+  max-width: 400px;
+  max-height: 300px;
+}
+.game-buttons > .buy-now{
+  background-color: rgb(119,0,228);
+}
+.game-buttons > button{
+  color: white;
+  height: 50px;
+  border-radius: 8px;
+  background-color: black;
+}
+.game-buttons{
+  grid-column: 2 / 3; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  gap: 10px;
+}
+.game-description{
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  background-color: black;
+  padding: 10px;
+}
+
+
 
 
