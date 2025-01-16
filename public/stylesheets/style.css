@@ -4,6 +4,7 @@ body {
 a {
   color: #00B7FF;
 }
+
 .top-bar{
   padding: 12px;
   display: flex;
@@ -40,4 +41,10 @@ a {
   font-size: 1.2rem;
 }
 
+@media (min-width: 640px) {
+
+}
+@media (min-width: 1024px) {
+  
+}
 
