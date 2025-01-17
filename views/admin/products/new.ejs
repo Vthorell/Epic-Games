@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/output.css' />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1><%= title %></h1>
+    </div>
+    <div>
+      <div>
+        <h2>Produkter</h2>
+      </div>
+      <div>
+        <h2>Ny Produkt</h2>
+        <form method="post">
+          <label for="productName">Namn</label>
+          <input type="text" name="productName" id="productName">
+          <label for="productDescription">Beskrivning</label>    
+          <textarea name="productDescription" id="productDescription"></textarea>
+          <label for="productImage">Bild</label>
+          <input type="url" name="productImage" id="productImage">
+          <label for="rating">Märke</label>
+          <input type="text" name="rating" id="brand">
+          <label for="price">Pris</label>
+          <input type="text" name="price" id="price">
+          <button type="submit">Lägg till</button>
+        </form>
+      </div>
+    </div>
+    <script>
+
+    
+        const form = document.querySelector("form");
+
+       
+        form.addEventListener("submit", function (event) {
+
+           
+            event.preventDefault();
+
+            
+            const formData = new FormData(event.target);
+
+            const product = {
+              productName: formData.get('productName'),
+              productDescription: formData.get('productDescription'),
+              productImage: formData.get('productImage'),
+              brand: formData.get('brand'),
+              sku: formData.get('sku'),
+              price: formData.get('price')
+            };
+
+               
+                fetch('/admin/products/new/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                              
+                    body: JSON.stringify(product)
+                }).then(() => {
+                    location.href = "/admin/products/";
+                })
+            
+        });
+
+    </script>
+  </body>
+</html>

@@ -4,6 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// db kod
+const Database = require('better-sqlite3');
+const db = new Database('./db/freakyfashion.db', { 
+  fileMustExist: true,
+  verbose: console.log 
+});
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productdetailRouter = require('./routes/product-detail')
@@ -23,6 +30,47 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product-detail', productdetailRouter);
+
+// GET /admin/products
+app.get("/admin/products/", function (req, res) {
+
+  
+  res.render('admin/products', 
+  {
+    title: "Administration",
+  });
+});
+
+// GET /api/products
+app.get('/api/products', (req, res) => {
+
+  // Behöver en selekt sats
+  const select = db.prepare(`
+    SELECT id,
+           productName,
+           productDescription,
+           productImage,
+           brand,
+           sku,
+           price,
+           urlSlug
+      FROM products
+ `);
+
+  // Kör SQL SELECT-kommandot/satsen
+  const products = select.all();
+
+  res.json(products);
+
+});
+
+// GET /admin/products/new
+app.get("/admin/products/new", function (req, res) {
+  
+  res.render("admin/products/new", {
+    title: "Administration",
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
