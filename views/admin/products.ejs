@@ -22,7 +22,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <style>
-      
+
     </style>
   </head>
   <body>
@@ -45,7 +45,7 @@
             <thead>
               <tr>
                 <th>Namn</th>
-                <th>SKU</th>
+                <th>Rating</th>
                 <th>Pris</th>
               </tr>
             </thead>
@@ -85,15 +85,15 @@
                 const nameCell = document.createElement('td');
                 nameCell.textContent = product.productName;
 
-                const skuCell = document.createElement('td');
-                skuCell.textContent = product.sku;
+                const ratingCell = document.createElement('td');
+                ratingCell.textContent = product.rating;
 
                 const priceCell = document.createElement('td');
                 priceCell.textContent = product.price;
 
                
                 row.appendChild(nameCell);
-                row.appendChild(skuCell);
+                row.appendChild(ratingCell);
                 row.appendChild(priceCell);
 
                

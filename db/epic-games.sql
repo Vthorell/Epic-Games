@@ -32,3 +32,7 @@ INSERT INTO products (
     '199 SEK',
     'svart-t-shirt'
 );
+
+-- radera product från table products
+DELETE FROM products 
+WHERE id = 3;
