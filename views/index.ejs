@@ -18,9 +18,17 @@
         <button class="Download">Download</button>
       </div>
     </header>
-  
+        <div class="hero">
+          <img class="slides" src="images/Fortnite.png" alt="fortnite">
+          <img class="slides" src="images/Rocketleague.png" alt="rocketleague">
+          <img class="slides" src="images/fallguys.png" alt="fallguys">
+
+          <button class="prev" onclick="changeSlide(-1)"><i class="bi bi-arrow-left-circle"></i></button>
+          <button class="next" onclick="changeSlide(1)"><i class="bi bi-arrow-right-circle"></i></button>
+        </div>
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
   </body>
+  <script src="javascripts/index.js"></script>
 </html>
