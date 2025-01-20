@@ -50,8 +50,7 @@ app.get('/api/products', (req, res) => {
            productName,
            productDescription,
            productImage,
-           brand,
-           sku,
+           rating,
            price,
            urlSlug
       FROM products
@@ -104,7 +103,6 @@ app.post('/admin/products/new/', function (req, res) {
     )
   `);
   
-  // TODO: få koden att skicka koden till rätt databasen
   // Kör SQL-kommandot/satsen - alltså skicka den till databasen
   insert.run(products);
 
@@ -112,7 +110,6 @@ app.post('/admin/products/new/', function (req, res) {
   res.redirect('products');
 });
 
-// TODO: routen till produkt detaljer
 // GET /products/:urlSlug
 app.get('/products/:urlSlug', function (req, res) {
   
@@ -120,7 +117,6 @@ app.get('/products/:urlSlug', function (req, res) {
   // detta värdet "1")
   const urlSlug = req.params.urlSlug;
 
-  // TODO: Få koden att skicka all information
   const select = db.prepare(`
     SELECT id,
            productName,
