@@ -80,10 +80,11 @@ app.post('/admin/products/new/', function (req, res) {
     productName: req.body.productName,
     productDescription: req.body.productDescription,
     productImage: req.body.productImage,
-    brand: req.body.rating,
+    rating: req.body.rating,
     price: req.body.price,
     urlSlug: generateSlug(req.body.productName)
   };
+  
   // 2 - Lagra informationen i databas
   const insert = db.prepare(`
     INSERT INTO products (
@@ -107,7 +108,7 @@ app.post('/admin/products/new/', function (req, res) {
   insert.run(products);
 
   // 3 - Instruera webbläsaren att gå till product listan
-  res.redirect('products');
+  res.redirect('/admin/products');
 });
 
 // GET /products/:urlSlug
