@@ -1,3 +1,6 @@
+# Ignorera alla databas-filer
+*.db
+
 # Logs
 logs
 *.log
