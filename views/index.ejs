@@ -19,6 +19,12 @@
         <button class="Download">Download</button>
       </div>
     </header>
+    <h2 class="text-spots">SPOTS</h2>
+    <div class="spots">
+      <% images.forEach(image => { %>
+        <img src="<%= image.productImage %>" alt="Produktbild">
+      <% }); %>
+    </div>
         <div class="hero">
           <img class="slides" src="images/Fortnite.png" alt="fortnite">
           <img class="slides" src="images/Rocketleague.png" alt="rocketleague">

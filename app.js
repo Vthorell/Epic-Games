@@ -13,7 +13,8 @@ const db = new Database('./db/epic-games.db', {
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productdetailRouter = require('./routes/product-detail')
+var productdetailRouter = require('./routes/product-detail');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product-detail', productdetailRouter);
+app.use('/', productsRouter);
 
 // GET /admin/products
 app.get("/admin/products/", function (req, res) {
