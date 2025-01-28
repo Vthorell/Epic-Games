@@ -352,6 +352,7 @@ hr {
 .spots img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .text-spots{
   color: white;
@@ -374,6 +375,7 @@ hr {
 .newgames img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .ADS{
   margin-left: 10%;
@@ -386,6 +388,7 @@ hr {
 .ADS img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .ADS-text{
   color: white;
@@ -403,6 +406,7 @@ hr {
 .SALES img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .SALES-text{
   color: white;
@@ -420,6 +424,7 @@ hr {
 .FREE-GAMES img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .FREE-GAMES-text{
   color: white;
@@ -437,6 +442,7 @@ hr {
 .trending-games img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .trending-games-text{
   color: white;
@@ -454,6 +460,7 @@ hr {
 .new-release img{
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .new-release-text{
   color: white;
