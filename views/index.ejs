@@ -33,9 +33,45 @@
           <button class="prev" onclick="changeSlide(-1)"><i class="bi bi-arrow-left-circle"></i></button>
           <button class="next" onclick="changeSlide(1)"><i class="bi bi-arrow-right-circle"></i></button>
         </div>
+
       <h2 class="new-games-text">NEW GAMES</h2>
       <div class="newgames">
         <% group2.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
+
+      <h2 class="ADS-text">ADS</h2>
+      <div class="ADS">
+        <% group3.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
+
+      <h2 class="SALES-text">SALES</h2>
+      <div class="SALES">
+        <% group4.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
+
+      <h2 class="FREE-GAMES-text">FREE GAMES</h2>
+      <div class="FREE-GAMES">
+        <% group5.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
+
+      <h2 class="trending-games-text">TRENDING GAMES</h2>
+      <div class="trending-games">
+        <% group6.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
+
+      <h2 class="new-release-text">NEW RELEASE</h2>
+      <div class="new-release">
+        <% group7.forEach(image => { %>
           <img src="<%= image.productImage %>" alt="Produktbild">
         <% }); %>
       </div>
