@@ -21,7 +21,7 @@
     </header>
     <h2 class="text-spots">SPOTS</h2>
     <div class="spots">
-      <% images.forEach(image => { %>
+      <% group1.forEach(image => { %>
         <img src="<%= image.productImage %>" alt="Produktbild">
       <% }); %>
     </div>
@@ -33,6 +33,12 @@
           <button class="prev" onclick="changeSlide(-1)"><i class="bi bi-arrow-left-circle"></i></button>
           <button class="next" onclick="changeSlide(1)"><i class="bi bi-arrow-right-circle"></i></button>
         </div>
+      <h2 class="new-games-text">NEW GAMES</h2>
+      <div class="newgames">
+        <% group2.forEach(image => { %>
+          <img src="<%= image.productImage %>" alt="Produktbild">
+        <% }); %>
+      </div>
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
