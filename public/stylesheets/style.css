@@ -15,7 +15,7 @@ a {
   align-items: center;
 }
 .top-bar > :nth-child(5){
-  margin-left: auto;
+  margin-left:auto;
 }
 .top-bar > *{
   color: white;
@@ -33,6 +33,7 @@ a {
 }
 .Sign-in{
   border-radius: 7px;
+  color: white;
   font-size: 1.1rem;
   height: 1.8rem;
   border: 1px;
@@ -43,6 +44,47 @@ a {
 .bi-globe{
   font-size: 1.2rem;
 }
+/* Right Elements Container styling */
+.right-elements {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+}
+
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none; 
+  flex-direction: column;
+  gap: 10px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  z-index: 1000;
+}
+
+.dropdown-content .bi-globe,
+.dropdown-content .Sign-in,
+.dropdown-content .Download {
+  width: 100%;
+  text-align: left;
+}
+
 .search-bar{
   margin-top: 100px;
   border-radius: 30px;
@@ -522,11 +564,20 @@ hr {
   .game-description{
   margin-top: 40%;
   }
-.top-bar {
-  flex-direction: column;
-  gap: 20px;
-}
-.bi-globe {
-  display: none;
-}
+  
+  .right-elements {
+    display: none; 
+  }
+
+  .dropdown-menu {
+    display: block; 
+  }
+
+  .dropdown-content {
+    display: none; 
+  }
+
+  .dropdown-content.open {
+    display: flex; 
+  }
 }
