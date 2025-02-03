@@ -8,16 +8,32 @@
     <title>Product-detail</title>
 </head>
 <body>
-
+  <header>
     <div class="top-bar">
-        <img class="logo" src="images/Epic-Games-Symbol.png">
-        <h3>STORE</h3>
-        <h4>Support</h4>
-        <h4>Distribute</h4>
+      <img class="logo" src="images/Epic-Games-Symbol.png">
+      <h3>STORE</h3>
+      <h4>Support</h4>
+      <h4>Distribute</h4>
+
+      <!-- Dropdown Menu in mobile view -->
+      <div class="dropdown-menu">
+        <button class="dropdown-toggle" onclick="toggleDropdown()">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="dropdown-content">
+          <i class="bi bi-globe"></i>
+          <button class="Sign-in">Sign in</button>
+          <button class="Download">Download</button>
+        </div>
+      </div>
+      <!-- right side of top bar in big screens -->
+      <div class="right-elements">
         <i class="bi bi-globe"></i>
         <button class="Sign-in">Sign in</button>
         <button class="Download">Download</button>
       </div>
+    </div>
+    </header>
 
         <input class="search-bar" type="text" placeholder="Search Store">
 
@@ -89,7 +105,6 @@
   </div>
 </div>
 
-<!--Fotter part-->
       <footer>
         <div class="footer-content">
        
@@ -156,4 +171,16 @@
         </div>
       </footer>
 </body>
+<script> //script for the top bar drop menu in mobile view
+  function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('open'); 
+  }
+  document.addEventListener('click', function (event) {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (!dropdownMenu.contains(event.target)) {
+      dropdownContent.classList.remove('open');
+    }
+  });</script>
 </html>
